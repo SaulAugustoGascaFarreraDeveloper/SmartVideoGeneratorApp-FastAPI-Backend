@@ -5,7 +5,7 @@ uvicorn[standard]==0.23.2
 langchain==0.1.5
 langchain-openai==0.0.5
 beautifulsoup4==4.12.3
-chromadb==0.4.22
+chromadb== 0.3.29
 httptools==0.6.1
 pip-chill==1.0.3
 python-dotenv==1.0.1
