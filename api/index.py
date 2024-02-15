@@ -45,7 +45,7 @@ async def root():
 
 
 @app.post("/api/scrape")
-async def get_vectorstore_from_url(item: str):
+async def get_vectorstore_from_url(item: UrlModel):
     url = item.url
     global vector_store
     logger.info(f"Received request to scrape URL: {url}")
