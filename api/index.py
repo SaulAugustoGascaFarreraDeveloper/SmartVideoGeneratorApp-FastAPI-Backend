@@ -23,7 +23,7 @@ load_dotenv()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:3000','https://smart-ai-video-generator.vercel.app'],
+    allow_origins=['http://localhost:3000','https://smart-ai-video-generator.vercel.app','*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
@@ -91,7 +91,7 @@ async def chat(request: ChatRequest):
         chat_history.append(user_message)
 
         ai_message = AIMessage(content=response["answer"])
-        chat_history.append(ai_message)
+        chat_history.append(ai_message.content)
 
         return response["answer"]
     except Exception as e:
