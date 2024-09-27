@@ -102,7 +102,7 @@ def get_context_retriever_chain(vector_store):
     logger.info("Creating context retriever chain")
     llm = ChatOpenAI()
 
-    retriever = vector_store.as_retriever()
+    retriever = vector_store.as_retriever(search_kwargs={"k": 1})
 
     prompt = ChatPromptTemplate.from_messages(
         [
